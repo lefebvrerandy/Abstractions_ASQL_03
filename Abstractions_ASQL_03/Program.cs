@@ -16,7 +16,8 @@ namespace Abstractions_ASQL_03
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainMenuForm());
+            //Application.Run(new Form1());
         }
     }
 }
