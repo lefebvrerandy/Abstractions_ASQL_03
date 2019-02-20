@@ -50,12 +50,12 @@ namespace Abstractions_ASQL_03
         {
             // CHeck that user 1 can successfully connect. If he can, lets prompt the result
             lbl_Error_User_1.Show();
-            string test = SignInChecker(USER_ONE);
-            if (test != "Failed")
+            string conectionString = SignInChecker(USER_ONE);
+            if (conectionString != "Failed")
             {
                 LabelChanger.ChangeText("Successfully Logged in.", lbl_Error_User_1);
                 LabelChanger.ChangeColor("Green", lbl_Error_User_1);
-                LoadSchemaList(test);
+                SQLLaptop.loadSchemaList(conectionString, comboBox1);
             }
             else
             {
@@ -80,28 +80,7 @@ namespace Abstractions_ASQL_03
             }
         }
 
-        private void loadSchemaList(string connectionString)
-        {
-            using (OleDbConnection conn = new OleDbConnection(connectionString))
-            {
-                string result = "";
-                OleDbCommand cmd = new OleDbCommand();
-                cmd.Connection = conn;
-                try
-                {
-                    conn.Open();
-                    DataTable test = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
-                    var test2 = test.Rows[0];
-                    var test3 = test.Rows[1];
-                    result = "Success";
-                }
-                catch (Exception e)
-                {
-                    result = e.Message.ToString();
-                }
-            }
 
-        }
 
         /// <summary>
         /// This is the sign in method that will be used to handle to logic of the two different
@@ -118,14 +97,15 @@ namespace Abstractions_ASQL_03
 
             // These fields will be linked to the specific user. User 1 is the left side of the
             // windows form where user 2 is the right side.
-            int labelNumberField = UserNumber;
-            int userNameField = UserNumber;
-            int passwordField = UserNumber;
+            int userNumber = UserNumber;
 
             if (UserNumber == 2 || UserNumber == 1)
             {
                 // Send to "Check Credentials method and return the status to see if it was valid
-                ConnectionString = SQLLaptop.CheckCredential("SQL Server", txt_User_1.Text.ToString(), txt_Pass_1.Text.ToString());
+                if (userNumber == 1)
+                    ConnectionString = SQLLaptop.CheckCredential("SQL Server", txt_User_1.Text.ToString(), txt_Pass_1.Text.ToString());
+                else
+                    ConnectionString = SQLLaptop.CheckCredential("SQL Server", txt_User_2.Text.ToString(), txt_Pass_2.Text.ToString());
 
                 // if valid, change label to text = Success, and color = Green
                 // update combobox 1 with all the tables from the required user
@@ -169,8 +149,25 @@ namespace Abstractions_ASQL_03
             btn_Second_Account.Show();
             lbl_Or.Show();
 
+
+
             // Retreive information from the first sign in form
+            string connectionString = SignInChecker(USER_ONE);
+            lbl_Error_User_2.Show();
             // If successfully logged in, display success
+            if (connectionString != "Failed")
+            {
+                SQLLaptop.loadSchemaList(connectionString, comboBox2);
+                LabelChanger.ChangeText("Successfully Logged in.", lbl_Error_User_2);
+                LabelChanger.ChangeColor("Green", lbl_Error_User_2);
+            }
+            else
+            {
+                LabelChanger.ChangeText("Invalid Credentials.", lbl_User_2);
+                LabelChanger.ChangeColor("Red", lbl_Error_User_2);
+            }
+
+
 
             // else if failed to log in, display error
         }
