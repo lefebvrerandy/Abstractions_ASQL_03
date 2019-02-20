@@ -55,6 +55,7 @@ namespace Abstractions_ASQL_03
             {
                 LabelChanger.ChangeText("Successfully Logged in.", lbl_Error_User_1);
                 LabelChanger.ChangeColor("Green", lbl_Error_User_1);
+                LoadSchemaList(test);
             }
             else
             {
@@ -79,6 +80,29 @@ namespace Abstractions_ASQL_03
             }
         }
 
+        private void loadSchemaList(string connectionString)
+        {
+            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            {
+                string result = "";
+                OleDbCommand cmd = new OleDbCommand();
+                cmd.Connection = conn;
+                try
+                {
+                    conn.Open();
+                    DataTable test = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
+                    var test2 = test.Rows[0];
+                    var test3 = test.Rows[1];
+                    result = "Success";
+                }
+                catch (Exception e)
+                {
+                    result = e.Message.ToString();
+                }
+            }
+
+        }
+
         /// <summary>
         /// This is the sign in method that will be used to handle to logic of the two different
         /// sign in buttons. We will pass the users number (1 = left side, 2 = right side) to the 
@@ -90,35 +114,29 @@ namespace Abstractions_ASQL_03
         /// <returns>Validation</returns>
         private string SignInChecker(int UserNumber)
         {
-            bool validation = false;
-            string test = "Failed";
+            string ConnectionString = "Failed";
 
             // These fields will be linked to the specific user. User 1 is the left side of the
             // windows form where user 2 is the right side.
-            int labelNumberFIeld = UserNumber;
+            int labelNumberField = UserNumber;
             int userNameField = UserNumber;
             int passwordField = UserNumber;
 
             if (UserNumber == 2 || UserNumber == 1)
             {
                 // Send to "Check Credentials method and return the status to see if it was valid
-
-            //DEBUG
-                OleDbConnection conn = new OleDbConnection();
-                //DEBUG
+                ConnectionString = SQLLaptop.CheckCredential("SQL Server", txt_User_1.Text.ToString(), txt_Pass_1.Text.ToString());
 
                 // if valid, change label to text = Success, and color = Green
                 // update combobox 1 with all the tables from the required user
 
-                test = "StringToPass(ConnectionString)";
-
             }
             else
             {
-                test = "Failed";
+                ConnectionString = "Failed";
             }
 
-            return test;
+            return ConnectionString;
         }
 
         private void btn_Second_Account_Click(object sender, EventArgs e)
