@@ -20,19 +20,25 @@ namespace Abstractions_ASQL_03
         const int USER_ONE = 1;
         const int USER_TWO = 2;
 
-        string selectedCombo1Database;
-        string selectedCombo2Database;
+        public static string selectedCombo1Database;
+        public static string selectedCombo2Database;
+
+        public static string selectedCombo1Table;
+        public static string selectedCombo2Table;
 
         string connectionString1;
         string connectionString2;
 
-        string connectionString1Database;
-        string connectionString2Database;
+        public static string connectionString1Database;
+        public static string connectionString2Database;
+
+        public static int whichPreview;
 
         public MainMenuForm()
         {
             InitializeComponent();
             DatabaseComboChanged();
+            TableComboChanged();
         }
 
         /// <summary>
@@ -230,9 +236,9 @@ namespace Abstractions_ASQL_03
         private void DatabaseComboChanged()
         {
             comboBox1.SelectedIndexChanged +=
-                new System.EventHandler(ComboBox_SelectedIndexChanged);
+                new System.EventHandler(Database_ComboBox_SelectedIndexChanged);
             comboBox2.SelectedIndexChanged +=
-                new System.EventHandler(ComboBox_SelectedIndexChanged);
+                new System.EventHandler(Database_ComboBox_SelectedIndexChanged);
         }
 
         /// <summary>
@@ -244,11 +250,10 @@ namespace Abstractions_ASQL_03
         /// </summary>
         /// <param name="sender">The combo box that triggered the event</param>
         /// <param name="e"></param>
-        private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void Database_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox combo = (ComboBox)sender;
-
-            string selectedCombo1Database = (string)combo.SelectedItem;
+            
             if (sender == comboBox1)
             {
                 selectedCombo1Database = (string)combo.SelectedItem;
@@ -265,5 +270,52 @@ namespace Abstractions_ASQL_03
             }
         }
 
+        private void TableComboChanged()
+        {
+            combo_Table_1.SelectedIndexChanged +=
+                new System.EventHandler(Table_ComboBox_SelectedIndexChanged);
+            combo_Table_2.SelectedIndexChanged +=
+                new System.EventHandler(Table_ComboBox_SelectedIndexChanged);
+        }
+
+        private void Table_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox combo = (ComboBox)sender;
+            if (combo == combo_Table_1)
+            {
+                selectedCombo1Table = (string)combo.SelectedItem;
+            }
+            else if (combo == combo_Table_2)
+            {
+                selectedCombo2Table = (string)combo.SelectedItem;
+            }
+        }
+
+        private void btn_Preview_Click(object sender, EventArgs e)
+        {
+            // Check to see which preview button was pressed
+            if (sender == btn_Preview_1)
+            {
+                // Ensure there has been selections made
+                if ((string)combo_Table_1.SelectedItem != null)
+                {
+                    whichPreview = USER_ONE;
+                    PreviewWindow pw = new PreviewWindow();
+                    pw.Show();
+                }
+
+            }
+            // Same thing as the above if statement but for the right side
+            else if (sender == btn_Preview_2)
+            {
+                if ((string)combo_Table_2.SelectedItem != null)
+                {
+                    whichPreview = USER_TWO;
+                    PreviewWindow pw = new PreviewWindow();
+                    pw.Show();
+                }
+
+            }
+        }
     }
 }

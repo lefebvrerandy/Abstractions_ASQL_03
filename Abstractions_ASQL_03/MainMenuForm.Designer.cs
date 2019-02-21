@@ -62,90 +62,102 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(212, 202);
+            this.comboBox1.Location = new System.Drawing.Point(75, 106);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(149, 33);
+            this.comboBox1.Size = new System.Drawing.Size(107, 21);
             this.comboBox1.TabIndex = 4;
             // 
             // btn_Preview_1
             // 
-            this.btn_Preview_1.Location = new System.Drawing.Point(212, 294);
+            this.btn_Preview_1.Location = new System.Drawing.Point(75, 156);
+            this.btn_Preview_1.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Preview_1.Name = "btn_Preview_1";
-            this.btn_Preview_1.Size = new System.Drawing.Size(111, 36);
+            this.btn_Preview_1.Size = new System.Drawing.Size(56, 19);
             this.btn_Preview_1.TabIndex = 5;
             this.btn_Preview_1.Text = "Preview";
             this.btn_Preview_1.UseVisualStyleBackColor = true;
+            this.btn_Preview_1.Click += new System.EventHandler(this.btn_Preview_Click);
             // 
             // btn_Transfer
             // 
-            this.btn_Transfer.Location = new System.Drawing.Point(305, 327);
+            this.btn_Transfer.Location = new System.Drawing.Point(153, 176);
+            this.btn_Transfer.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Transfer.Name = "btn_Transfer";
-            this.btn_Transfer.Size = new System.Drawing.Size(215, 41);
+            this.btn_Transfer.Size = new System.Drawing.Size(108, 21);
             this.btn_Transfer.TabIndex = 12;
             this.btn_Transfer.Text = "> Copy Database >";
             this.btn_Transfer.UseVisualStyleBackColor = true;
             // 
             // txt_User_1
             // 
-            this.txt_User_1.Location = new System.Drawing.Point(212, 37);
+            this.txt_User_1.Location = new System.Drawing.Point(75, 22);
+            this.txt_User_1.Margin = new System.Windows.Forms.Padding(2);
             this.txt_User_1.Name = "txt_User_1";
-            this.txt_User_1.Size = new System.Drawing.Size(149, 31);
+            this.txt_User_1.Size = new System.Drawing.Size(76, 20);
             this.txt_User_1.TabIndex = 0;
             // 
             // txt_Pass_1
             // 
-            this.txt_Pass_1.Location = new System.Drawing.Point(212, 74);
+            this.txt_Pass_1.Location = new System.Drawing.Point(75, 40);
+            this.txt_Pass_1.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Pass_1.Name = "txt_Pass_1";
-            this.txt_Pass_1.Size = new System.Drawing.Size(149, 31);
+            this.txt_Pass_1.Size = new System.Drawing.Size(76, 20);
             this.txt_Pass_1.TabIndex = 1;
             // 
             // txt_User_2
             // 
-            this.txt_User_2.Location = new System.Drawing.Point(492, 40);
+            this.txt_User_2.Location = new System.Drawing.Point(284, 20);
+            this.txt_User_2.Margin = new System.Windows.Forms.Padding(2);
             this.txt_User_2.Name = "txt_User_2";
-            this.txt_User_2.Size = new System.Drawing.Size(148, 31);
+            this.txt_User_2.Size = new System.Drawing.Size(76, 20);
             this.txt_User_2.TabIndex = 6;
             // 
             // txt_Pass_2
             // 
-            this.txt_Pass_2.Location = new System.Drawing.Point(492, 74);
+            this.txt_Pass_2.Location = new System.Drawing.Point(284, 40);
+            this.txt_Pass_2.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Pass_2.Name = "txt_Pass_2";
-            this.txt_Pass_2.Size = new System.Drawing.Size(148, 31);
+            this.txt_Pass_2.Size = new System.Drawing.Size(76, 20);
             this.txt_Pass_2.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(87, 43);
+            this.label1.Location = new System.Drawing.Point(11, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 25);
+            this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "User Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(100, 77);
+            this.label2.Location = new System.Drawing.Point(18, 40);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 25);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 12;
             this.label2.Text = "Password";
             // 
             // lbl_User_2
             // 
             this.lbl_User_2.AutoSize = true;
-            this.lbl_User_2.Location = new System.Drawing.Point(367, 43);
+            this.lbl_User_2.Location = new System.Drawing.Point(218, 25);
+            this.lbl_User_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_User_2.Name = "lbl_User_2";
-            this.lbl_User_2.Size = new System.Drawing.Size(119, 25);
+            this.lbl_User_2.Size = new System.Drawing.Size(60, 13);
             this.lbl_User_2.TabIndex = 13;
             this.lbl_User_2.Text = "User Name";
             // 
             // lbl_Pass_2
             // 
             this.lbl_Pass_2.AutoSize = true;
-            this.lbl_Pass_2.Location = new System.Drawing.Point(380, 77);
+            this.lbl_Pass_2.Location = new System.Drawing.Point(225, 43);
+            this.lbl_Pass_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Pass_2.Name = "lbl_Pass_2";
-            this.lbl_Pass_2.Size = new System.Drawing.Size(106, 25);
+            this.lbl_Pass_2.Size = new System.Drawing.Size(53, 13);
             this.lbl_Pass_2.TabIndex = 14;
             this.lbl_Pass_2.Text = "Password";
             // 
@@ -153,9 +165,10 @@
             // 
             this.lbl_Error_User_1.AutoSize = true;
             this.lbl_Error_User_1.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Error_User_1.Location = new System.Drawing.Point(207, 9);
+            this.lbl_Error_User_1.Location = new System.Drawing.Point(58, 5);
+            this.lbl_Error_User_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Error_User_1.Name = "lbl_Error_User_1";
-            this.lbl_Error_User_1.Size = new System.Drawing.Size(189, 25);
+            this.lbl_Error_User_1.Size = new System.Drawing.Size(93, 13);
             this.lbl_Error_User_1.TabIndex = 16;
             this.lbl_Error_User_1.Text = "Invalid Credentials";
             // 
@@ -163,34 +176,39 @@
             // 
             this.lbl_Error_User_2.AutoSize = true;
             this.lbl_Error_User_2.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Error_User_2.Location = new System.Drawing.Point(487, 9);
+            this.lbl_Error_User_2.Location = new System.Drawing.Point(267, 5);
+            this.lbl_Error_User_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Error_User_2.Name = "lbl_Error_User_2";
-            this.lbl_Error_User_2.Size = new System.Drawing.Size(189, 25);
+            this.lbl_Error_User_2.Size = new System.Drawing.Size(93, 13);
             this.lbl_Error_User_2.TabIndex = 18;
             this.lbl_Error_User_2.Text = "Invalid Credentials";
             // 
             // btn_Preview_2
             // 
-            this.btn_Preview_2.Location = new System.Drawing.Point(492, 294);
+            this.btn_Preview_2.Location = new System.Drawing.Point(284, 156);
+            this.btn_Preview_2.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Preview_2.Name = "btn_Preview_2";
-            this.btn_Preview_2.Size = new System.Drawing.Size(111, 36);
+            this.btn_Preview_2.Size = new System.Drawing.Size(56, 19);
             this.btn_Preview_2.TabIndex = 11;
             this.btn_Preview_2.Text = "Preview";
             this.btn_Preview_2.UseVisualStyleBackColor = true;
+            this.btn_Preview_2.Click += new System.EventHandler(this.btn_Preview_Click);
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(492, 202);
+            this.comboBox2.Location = new System.Drawing.Point(284, 106);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(148, 33);
+            this.comboBox2.Size = new System.Drawing.Size(105, 21);
             this.comboBox2.TabIndex = 10;
             // 
             // btn_Copy
             // 
-            this.btn_Copy.Location = new System.Drawing.Point(611, 159);
+            this.btn_Copy.Location = new System.Drawing.Point(306, 83);
+            this.btn_Copy.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Copy.Name = "btn_Copy";
-            this.btn_Copy.Size = new System.Drawing.Size(189, 39);
+            this.btn_Copy.Size = new System.Drawing.Size(94, 20);
             this.btn_Copy.TabIndex = 9;
             this.btn_Copy.Text = "Copy Credential";
             this.btn_Copy.UseVisualStyleBackColor = true;
@@ -198,9 +216,10 @@
             // 
             // btn_Signin_2
             // 
-            this.btn_Signin_2.Location = new System.Drawing.Point(492, 160);
+            this.btn_Signin_2.Location = new System.Drawing.Point(222, 83);
+            this.btn_Signin_2.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Signin_2.Name = "btn_Signin_2";
-            this.btn_Signin_2.Size = new System.Drawing.Size(111, 39);
+            this.btn_Signin_2.Size = new System.Drawing.Size(56, 20);
             this.btn_Signin_2.TabIndex = 9;
             this.btn_Signin_2.Text = "Sign In";
             this.btn_Signin_2.UseVisualStyleBackColor = true;
@@ -208,9 +227,10 @@
             // 
             // btn_Signin_1
             // 
-            this.btn_Signin_1.Location = new System.Drawing.Point(212, 160);
+            this.btn_Signin_1.Location = new System.Drawing.Point(14, 83);
+            this.btn_Signin_1.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Signin_1.Name = "btn_Signin_1";
-            this.btn_Signin_1.Size = new System.Drawing.Size(111, 36);
+            this.btn_Signin_1.Size = new System.Drawing.Size(56, 19);
             this.btn_Signin_1.TabIndex = 3;
             this.btn_Signin_1.Text = "Sign In";
             this.btn_Signin_1.UseVisualStyleBackColor = true;
@@ -220,17 +240,19 @@
             // 
             this.lbl_Copy_Status.AutoSize = true;
             this.lbl_Copy_Status.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Copy_Status.Location = new System.Drawing.Point(336, 383);
+            this.lbl_Copy_Status.Location = new System.Drawing.Point(168, 199);
+            this.lbl_Copy_Status.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Copy_Status.Name = "lbl_Copy_Status";
-            this.lbl_Copy_Status.Size = new System.Drawing.Size(150, 25);
+            this.lbl_Copy_Status.Size = new System.Drawing.Size(75, 13);
             this.lbl_Copy_Status.TabIndex = 24;
             this.lbl_Copy_Status.Text = "Copy Success";
             // 
             // btn_Second_Account
             // 
-            this.btn_Second_Account.Location = new System.Drawing.Point(445, 163);
+            this.btn_Second_Account.Location = new System.Drawing.Point(221, 84);
+            this.btn_Second_Account.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Second_Account.Name = "btn_Second_Account";
-            this.btn_Second_Account.Size = new System.Drawing.Size(111, 36);
+            this.btn_Second_Account.Size = new System.Drawing.Size(56, 19);
             this.btn_Second_Account.TabIndex = 8;
             this.btn_Second_Account.Text = "Sign In";
             this.btn_Second_Account.UseVisualStyleBackColor = true;
@@ -239,85 +261,94 @@
             // lbl_Or
             // 
             this.lbl_Or.AutoSize = true;
-            this.lbl_Or.Location = new System.Drawing.Point(562, 167);
+            this.lbl_Or.Location = new System.Drawing.Point(281, 87);
+            this.lbl_Or.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Or.Name = "lbl_Or";
-            this.lbl_Or.Size = new System.Drawing.Size(43, 25);
+            this.lbl_Or.Size = new System.Drawing.Size(23, 13);
             this.lbl_Or.TabIndex = 26;
             this.lbl_Or.Text = "OR";
             // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(212, 109);
+            this.comboBox3.Location = new System.Drawing.Point(75, 58);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(149, 33);
+            this.comboBox3.Size = new System.Drawing.Size(76, 21);
             this.comboBox3.TabIndex = 2;
             // 
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(492, 109);
+            this.comboBox4.Location = new System.Drawing.Point(284, 58);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(148, 33);
+            this.comboBox4.Size = new System.Drawing.Size(76, 21);
             this.comboBox4.TabIndex = 8;
             // 
             // lbl_Provider_1
             // 
             this.lbl_Provider_1.AutoSize = true;
-            this.lbl_Provider_1.Location = new System.Drawing.Point(114, 112);
+            this.lbl_Provider_1.Location = new System.Drawing.Point(25, 58);
+            this.lbl_Provider_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Provider_1.Name = "lbl_Provider_1";
-            this.lbl_Provider_1.Size = new System.Drawing.Size(92, 25);
+            this.lbl_Provider_1.Size = new System.Drawing.Size(46, 13);
             this.lbl_Provider_1.TabIndex = 29;
             this.lbl_Provider_1.Text = "Provider";
             // 
             // lbl_Provider_2
             // 
             this.lbl_Provider_2.AutoSize = true;
-            this.lbl_Provider_2.Location = new System.Drawing.Point(394, 112);
+            this.lbl_Provider_2.Location = new System.Drawing.Point(232, 61);
+            this.lbl_Provider_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Provider_2.Name = "lbl_Provider_2";
-            this.lbl_Provider_2.Size = new System.Drawing.Size(92, 25);
+            this.lbl_Provider_2.Size = new System.Drawing.Size(46, 13);
             this.lbl_Provider_2.TabIndex = 30;
             this.lbl_Provider_2.Text = "Provider";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(102, 205);
+            this.label3.Location = new System.Drawing.Point(18, 107);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 25);
+            this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 31;
             this.label3.Text = "Database";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(382, 205);
+            this.label4.Location = new System.Drawing.Point(227, 114);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 25);
+            this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 32;
             this.label4.Text = "Database";
             // 
             // combo_Table_1
             // 
             this.combo_Table_1.FormattingEnabled = true;
-            this.combo_Table_1.Location = new System.Drawing.Point(196, 251);
+            this.combo_Table_1.Location = new System.Drawing.Point(75, 131);
+            this.combo_Table_1.Margin = new System.Windows.Forms.Padding(2);
             this.combo_Table_1.Name = "combo_Table_1";
-            this.combo_Table_1.Size = new System.Drawing.Size(165, 33);
+            this.combo_Table_1.Size = new System.Drawing.Size(107, 21);
             this.combo_Table_1.TabIndex = 33;
             // 
             // combo_Table_2
             // 
             this.combo_Table_2.FormattingEnabled = true;
-            this.combo_Table_2.Location = new System.Drawing.Point(492, 251);
+            this.combo_Table_2.Location = new System.Drawing.Point(284, 131);
+            this.combo_Table_2.Margin = new System.Windows.Forms.Padding(2);
             this.combo_Table_2.Name = "combo_Table_2";
-            this.combo_Table_2.Size = new System.Drawing.Size(165, 33);
+            this.combo_Table_2.Size = new System.Drawing.Size(105, 21);
             this.combo_Table_2.TabIndex = 34;
             // 
             // MainMenuForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(400, 234);
             this.Controls.Add(this.combo_Table_2);
             this.Controls.Add(this.combo_Table_1);
             this.Controls.Add(this.label4);
@@ -347,6 +378,7 @@
             this.Controls.Add(this.btn_Transfer);
             this.Controls.Add(this.btn_Preview_1);
             this.Controls.Add(this.comboBox1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainMenuForm";
             this.Text = "MainMenuForm";
             this.Load += new System.EventHandler(this.MainMenuForm_Load);

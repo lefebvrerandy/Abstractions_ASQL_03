@@ -120,5 +120,27 @@ namespace Abstractions_ASQL_03
                 }
             }
         }
+
+        static public DataTable QuerySelectAll(string connectionString)
+        {
+            string result;
+            DataTable dt = new DataTable();
+            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            {
+                OleDbCommand cmd = new OleDbCommand("SELECT * FROM " + MainMenuForm.selectedCombo1Table);
+                cmd.Connection = conn;
+                try
+                {
+                    conn.Open();
+                    dt.Load(cmd.ExecuteReader());
+                    conn.Close();
+                }
+                catch (Exception e)
+                {
+                    result = e.Message.ToString();
+                }
+            }
+            return dt;
+        }
     }
 }
