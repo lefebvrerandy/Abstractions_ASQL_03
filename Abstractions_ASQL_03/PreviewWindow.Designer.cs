@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lbl_Title = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,33 +41,22 @@
             this.dataGridView1.Size = new System.Drawing.Size(800, 420);
             this.dataGridView1.TabIndex = 0;
             // 
-            // lbl_Title
-            // 
-            this.lbl_Title.AutoSize = true;
-            this.lbl_Title.Location = new System.Drawing.Point(12, 9);
-            this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(35, 13);
-            this.lbl_Title.TabIndex = 1;
-            this.lbl_Title.Text = "label1";
-            // 
             // PreviewWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lbl_Title);
             this.Controls.Add(this.dataGridView1);
             this.Name = "PreviewWindow";
             this.Text = "PreviewWindow";
+            this.Load += new System.EventHandler(this.PreviewWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label lbl_Title;
     }
 }

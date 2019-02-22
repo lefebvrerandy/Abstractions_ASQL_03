@@ -42,7 +42,7 @@ namespace Abstractions_ASQL_03
             else
                 connString.Add("Password", "Conestoga1");
 //DEBUG END
-            connString.Add("Persist Security Inndo", "True");
+            connString.Add("Persist Security Info", "True");
             //connString.Add("Initial Catalog", "Northwind");
 
             // Attempt to connect to the database
@@ -111,9 +111,29 @@ namespace Abstractions_ASQL_03
                     combobox.Items.Clear();
                     foreach (DataRow table in tables.Rows)
                     {
-                        combobox.Items.Add(table["TABLE_NAME"].ToString().Trim());
+                        string sc = table["TABLE_NAME"].ToString();
+                        combobox.Items.Add(table["TABLE_SCHEMA"].ToString() + "." + table["TABLE_NAME"].ToString());
                     }
                 }
+                //{
+                //    conn.Open();
+                //    DataTable tables = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
+                //        new object[] { null, null, null, "TABLE" });
+                //    combobox.Items.Clear();
+                //    foreach (DataRow table in tables.Rows)
+                //    {
+                //        string sc = table["TABLE_NAME"].ToString();
+                //        combobox.Items.Add(table["TABLE_NAME"].ToString());
+                //    }
+
+                //    combobox.Items.Clear();
+                //    DataTable schemas = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
+                //        new object[] { null, null, null, "TABLE" });
+                //    foreach (DataRow schema in schemas.Rows)
+                //    {
+                //        combobox.Items.Add(schema["TABLE_SCHEMA"].ToString());
+                //    }
+                //}
                 catch (Exception e)
                 {
                     result = e.Message.ToString();
@@ -121,13 +141,13 @@ namespace Abstractions_ASQL_03
             }
         }
 
-        static public DataTable QuerySelectAll(string connectionString)
+        static public DataTable QuerySelectAll(string connectionString, string selectedComboTable)
         {
             string result;
             DataTable dt = new DataTable();
             using (OleDbConnection conn = new OleDbConnection(connectionString))
             {
-                OleDbCommand cmd = new OleDbCommand("SELECT * FROM " + MainMenuForm.selectedCombo1Table);
+                OleDbCommand cmd = new OleDbCommand(@"SELECT * FROM " + selectedComboTable);
                 cmd.Connection = conn;
                 try
                 {

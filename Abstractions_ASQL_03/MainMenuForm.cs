@@ -87,7 +87,7 @@ namespace Abstractions_ASQL_03
         /// <param name="e"></param>
         private void btn_Signin_1_Click(object sender, EventArgs e)
         {
-            // CHeck that user 1 can successfully connect. If he can, lets prompt the result
+            // Check that user 1 can successfully connect. If he can, lets prompt the result
             lbl_Error_User_1.Show();
             string connectionString = SignInChecker(USER_ONE);
             if (connectionString != "Failed")
@@ -177,6 +177,7 @@ namespace Abstractions_ASQL_03
             // Hide all unrelated field
             lbl_Or.Hide();
             btn_Second_Account.Hide();
+            lbl_Error_User_2.Hide();
 
             // Show related fields
             lbl_User_2.Show();
@@ -217,6 +218,7 @@ namespace Abstractions_ASQL_03
                 SQLLaptop.loadSchemaList(connectionString, comboBox2);
                 LabelChanger.ChangeText("Successfully Logged in.", lbl_Error_User_2);
                 LabelChanger.ChangeColor("Green", lbl_Error_User_2);
+                connectionString2 = connectionString;
             }
             else
             {
@@ -314,7 +316,6 @@ namespace Abstractions_ASQL_03
                     PreviewWindow pw = new PreviewWindow();
                     pw.Show();
                 }
-
             }
         }
     }
