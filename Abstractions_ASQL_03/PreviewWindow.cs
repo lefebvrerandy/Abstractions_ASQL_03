@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Developer:   Randy Lefebvre
+ * Course:      Advanced SQL - PROG 3070
+ * Description: This class handles the PreviewWindow form. This form is just a way to display
+ *              the table that is selected.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,12 +21,9 @@ namespace Abstractions_ASQL_03
     public partial class PreviewWindow : Form
     {
 
-        // These two constants are used to define if its 
-        // the left user field or the right user field
+        // These two constants are used to define if its the left user field or the right user field
         const int USER_ONE = 1;
         const int USER_TWO = 2;
-
-        // Below is a definition of all the class variables
 
         // Connection string for the left user and right user. Initialized in "InitializeVariablesFromParent"
         string connectionStringLeft;
@@ -46,6 +50,13 @@ namespace Abstractions_ASQL_03
             PopulateTitle();
         }
 
+        /// <summary>
+        /// This method sets the proper size for both the window and the data grid.
+        /// We will keep the window/datagrid to only be as low as 1/4 of the screen
+        /// up to 1/2 of the screen. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PreviewWindow_Load(object sender, EventArgs e)
         {
             // Getting the height of the title bar
@@ -129,7 +140,7 @@ namespace Abstractions_ASQL_03
             }
 
             // We want to seach the columns for the datatype Byte[]. Currently our 
-            // datagridview cannot support some Byte[]. Lets not display them.
+            // datagridview cannot support some Byte[] rows. Lets not display them.
             // We will warn the user if a Byte[] column is found. From here, we will give
             // the user the choice to convert the column and row datatypes to something viewable (a 
             // string in our case). This WILL take a while depending on how many rows there are. 
@@ -158,18 +169,22 @@ namespace Abstractions_ASQL_03
             if (containsInvalidDatatypes && (rowCount <= 200))
             {
                 result = MessageBox.Show("This table contains a column or columns that have an non-viewable data type." +
-                    "We have the ability to convert that columns rows to blank entries. This will make the rest of the data viewable." +
-                    "Be Warned though.. This could take a VERY long time depending on the amount of rows.\n" +
-                    "We suggest only doing this if the row count is less than 50. \n" +
-                    "The row count for this Table is " + rowCount + ".", "WARNING: Invalid data type in a column detected.", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        "We have the ability to convert that columns rows to blank entries. This will make the rest of the data viewable." +
+                        "Be Warned though.. This could take a VERY long time depending on the amount of rows.\n" +
+                        "We suggest only doing this if the row count is less than 50. \n" +
+                        "The row count for this Table is " + rowCount + ".",
+                    "WARNING: Invalid data type in a column detected.",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
             else if (containsInvalidDatatypes)
             {
-                result = MessageBox.Show("Currently this application does not support the ability to display a data table," +
-                    "that has an invalid data type in one or more of the columns and more than 200 rows." +
-                    "\nSorry for the inconvience." +
-                    "To better understand why, your tables row count is below.\n" +
-                    "The row count for this Table is " + rowCount + ".", "ERROR: Invalid data type in a column detected.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                result = MessageBox.Show("Currently this application does not support the ability to display a data table " +
+                        "that has an invalid data type in one or more of the columns and more than 200 rows. It would take too long to convert every row containing this datatype" +
+                        "\nSorry for the inconvenience." +
+                        "To better understand why, your tables row count is below.\n" +
+                        "The row count for this Table is " + rowCount + ".",
+                    "ERROR: Invalid data type in a column detected.",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             // We will only convert the table if the user clicks "YES"
@@ -190,6 +205,20 @@ namespace Abstractions_ASQL_03
             return containsInvalidDatatypes;
         }
 
+        /// <summary>
+        /// This method was obtained from :
+        ///     https://stackoverflow.com/questions/2538477/changing-populated-datatable-column-data-types
+        /// By the user: 
+        ///     Jude Niroshan
+        /// This method takes a column and converts the datatype to the requested one. We are using it here
+        /// to convert all the Byte[] columns to be string instead. Currently the GridDataView has an issue
+        /// displaying some of the Byte[] codes. Using this conversion method, we can display parts of the table
+        /// for the user instead of nothing.
+        /// </summary>
+        /// <param name="table">The data table that will be effected</param>
+        /// <param name="columnname">The name of the column</param>
+        /// <param name="newtype">The new data type we want to convert the column to</param>
+        /// <returns>A DataTable containing the columns with the new data type</returns>
         public static DataTable ChangeColumnDataType(DataTable table, string columnname, Type newtype)
         {
             DataTable newTable = table;
@@ -224,6 +253,10 @@ namespace Abstractions_ASQL_03
             return newTable;
         }
 
+        /// <summary>
+        /// This method will set the proper title of this window. It will just 
+        /// display what is currently being viewed
+        /// </summary>
         private void PopulateTitle()
         {
             // Check which preview button was pressed. Left or right side.
